@@ -1,14 +1,44 @@
 "use strict"
 
 const expect = require("chai").expect
-const MyBlock = require("../main")
+const Block = require("../main")
+const BlockChain = require("../main")
 
-describe(("testing my simple blockchain in JS"), function(){
+describe(("testing Block class"), function(){
+  let myBlock
+
+  beforeEach(function(){
+    myBlock = new Block()
+  })
+
+  afterEach(function(){
+    myBlock = undefined
+  })
+
   // myBlock class tests:
   it(("myBlock should be an object"), function(){
-    let myBlock = new MyBlock()
     expect(myBlock).to.be.a("object")
   })
 
   // calculateHash() should be a function
+  it(("calculateHash() should be a function"), function(){
+    expect(myBlock.calculateHash).to.be.a("function")
+  })
+})
+
+describe(("testing BlockChain class"), function(){
+  let myBlockChain
+
+  beforeEach(function(){
+    myBlockChain = new BlockChain()
+  })
+
+  afterEach(function(){
+    myBlockChain = undefined
+  })
+
+  // myBlock class tests:
+  it(("myBlockChain should be an object"), function(){
+    expect(myBlockChain).to.be.a("object")
+  })
 })

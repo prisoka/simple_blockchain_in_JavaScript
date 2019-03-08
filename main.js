@@ -20,15 +20,19 @@ class BlockChain {
   }
 
   createOriginBlock(){
-    console.log("HELLO 1")
     return new Block(0, "03/07/2019", 'Origin block', "0")
   }
 
   // getLatestBlock() should return the last element in the chain
   getLatestBlock(){
-    console.log("HELLO 2")
-
     return this.chain[this.chain.length -1]
+  }
+
+  // should create a new Block
+  addBlock(newBlock){
+    newBlock.previousHash = this.getLatestBlock().hash
+    newBlock.hash = newBlock.calculateHash()
+    this.chain.push(newBlock)
   }
 }
 

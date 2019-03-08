@@ -41,4 +41,12 @@ describe(("testing BlockChain class"), function(){
   it(("myBlockChain should be an object"), function(){
     expect(myBlockChain).to.be.a("object")
   })
+  
+  it(("chainIsValid() should return true is chain is valid"), function(){
+    expect(myBlockChain.chainIsValid()).to.equal(true)
+  })
+
+  it(("chainIsValid() should return false is chain is Invalid"), function(){
+    expect(myBlockChain.chainIsValid()).to.equal(false)
+  })
 })
